@@ -9,7 +9,6 @@ InputSystem = new function () {
 	//dwie funkcje do eventListenerów
 	
 	function keyDownHandler(e) {
-		console.log("down", e.keyCode);
 		if (e.keyCode == 37) {
 			InputSystem.leftPressed = true;
 		} else if (e.keyCode == 38) {
@@ -22,7 +21,6 @@ InputSystem = new function () {
 	}
 
 	function keyUpHandler(e) {
-		console.log("up", e.keyCode);
 		if (e.keyCode == 37) {
 			InputSystem.leftPressed = false;
 		} else if (e.keyCode == 38) {

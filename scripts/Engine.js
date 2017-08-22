@@ -1,5 +1,5 @@
-function Engine (canvas) {
-    this.canvas = canvas
+function Engine(canvas) {
+    this.canvas = canvas;
 }
 
 Engine.prototype.init = function () {
@@ -9,11 +9,16 @@ Engine.prototype.init = function () {
 };
 
 Engine.prototype.run = function () {
-    let i = 1000;
-    while (i > 0){
-       i--;
-        MovementSystem.process([this.hero]);
-        RenderSystem.render([this.hero]);
-		InputSystem.control([this.hero]);
-    }
+	var parent = this; //zrzucam this.hero itd. do zmiennej
+					   //tak żeby było dostępne w mainLoop()
+
+	let mainLoop = function() {
+    	MovementSystem.process([parent.hero]);
+        RenderSystem.render([parent.hero]);
+		InputSystem.control([parent.hero]);
+
+		requestAnimationFrame(mainLoop);
+	};
+	console.log(this);
+	requestAnimationFrame(mainLoop);
 };
