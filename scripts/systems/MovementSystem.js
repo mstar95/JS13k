@@ -5,12 +5,11 @@ MovementSystem = new function () {
     };
 
     let processEntity = function (entity) {
-        mc = entity.components.acceleration;
         pc = entity.components.position;
-        ac = entity.components.velocity;
-
-        addCoordinates(pc, ac);
-        addCoordinates(mc, pc);
+        vc = entity.components.velocity;
+        ac = entity.components.acceleration;
+        addCoordinates(vc, ac);
+        addCoordinates(pc, vc);
 
     };
 

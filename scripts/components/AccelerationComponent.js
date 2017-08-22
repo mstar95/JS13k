@@ -1,6 +1,6 @@
-function AccelerationComponent(vx, vy){
-    this.vx = vx;
-    this.vy = vy;
+function AccelerationComponent(x, y){
+    this.x = x;
+    this.y = y;
 }
 
 AccelerationComponent.prototype.name = "acceleration"
