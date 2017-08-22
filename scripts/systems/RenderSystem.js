@@ -5,14 +5,14 @@ RenderSystem = new function () {
     };
 
     this.renderEntity = function (entity) {
-        let pc = entity.components.position;
+		
+		let pc = entity.components.position;
         let sc = entity.components.size;
-        this.scale = 10;
-        this.ctx.beginPath();
-        this.ctx.rect(pc.x , pc.y , sc.x * this.scale, sc.y * this.scale);
-        this.ctx.fillStyle = "#FF0000";
-        this.ctx.fill();
-        this.ctx.closePath();
+        RenderSystem.scale = 10;
+        RenderSystem.ctx.beginPath();
+        RenderSystem.ctx.rect(pc.x , pc.y , sc.x * RenderSystem.scale, sc.y * RenderSystem.scale);
+        RenderSystem.ctx.fillStyle = "#FF0000";
+        RenderSystem.ctx.fill();
+        RenderSystem.ctx.closePath();
     };
-    console.log(this);
 };
