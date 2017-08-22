@@ -13,4 +13,3 @@ Engine.prototype.run = function () {
         MovementSystem.process([this.hero]);
     }
 };
-
