@@ -1,0 +1,35 @@
+body > div {
+	margin: auto;
+	width: 80%;
+	height: 80%;
+	min-width: 810px;
+	min-height: 810px;
+	padding: 100px;
+	border: 3px solid black;
+}
+.button {
+	margin: auto;
+	display: block;
+	width: 400px;
+	height: 80px;
+	font-size: 30px;
+	text-decoration: none;
+	border: 3px dotted blue;
+	text-align: center;
+	line-height: 80px;
+}
+.button:hover {
+	background: blue;
+	color: #fff;
+	border: 3px dotted #fff;
+}
+#game {
+	display: none;
+	background: #ffefd9;
+	text-align: center;
+}
+#game-canvas {
+	width: 800px;
+	height: 600px;
+	background: #fff;
+}
