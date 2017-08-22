@@ -14,5 +14,6 @@ Engine.prototype.run = function () {
        i--;
         MovementSystem.process([this.hero]);
         RenderSystem.render([this.hero]);
+		InputSystem.control([this.hero]);
     }
 };
