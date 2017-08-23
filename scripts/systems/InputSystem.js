@@ -1,7 +1,7 @@
 InputSystem = new function () {
 	let __moveSpeed = 7;
 	
-	this.leftPressed = true;
+	this.leftPressed = false;
 	this.upPressed = false;
 	this.rightPressed = false;
 	this.downPressed = false;
@@ -43,16 +43,25 @@ InputSystem = new function () {
 
 	let processEntity = function (entity) {
 		vc = entity.components.velocity;
-
+		console.log(vc.x)
 		//może lepiej if zamiast else if, póki co zostawiam tak
 		if (InputSystem.leftPressed) {
-			vc.x -= __moveSpeed;
+			vc.x = - __moveSpeed;
 		} else if (InputSystem.upPressed) {
-			vc.y -= __moveSpeed;
+			vc.y = - __moveSpeed;
 		} else if (InputSystem.rightPressed) {
-			vc.x += __moveSpeed;
+			vc.x = __moveSpeed;
 		} else if (InputSystem.downPressed) {
-			vc.y += __moveSpeed;
+			vc.y = __moveSpeed;
 		}
+
+		if (!InputSystem.leftPressed && !InputSystem.rightPressed) {
+            vc.x = 0
+        }
+
+        if (!InputSystem.upPressed && !InputSystem.downPressed) {
+            vc.y = 0
+        }
+
 	};
 }
