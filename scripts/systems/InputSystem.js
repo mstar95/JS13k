@@ -1,5 +1,5 @@
 InputSystem = new function () {
-	let __moveSpeed = 7;
+	let _moveSpeed = 7;
 	
 	this.leftPressed = false;
 	this.upPressed = false;
@@ -13,10 +13,12 @@ InputSystem = new function () {
 			InputSystem.leftPressed = true;
 		} else if (e.keyCode == 38) {
 			InputSystem.upPressed = true;
+			e.preventDefault(); //prevent scrolling window
 		} else if (e.keyCode == 39) {
 			InputSystem.rightPressed = true;
 		} else if (e.keyCode == 40) {
 			InputSystem.downPressed = true;
+			e.preventDefault();
 		}
 	}
 
@@ -46,13 +48,13 @@ InputSystem = new function () {
 		console.log(vc.x)
 		//może lepiej if zamiast else if, póki co zostawiam tak
 		if (InputSystem.leftPressed) {
-			vc.x = - __moveSpeed;
+			vc.x = - _moveSpeed;
 		} else if (InputSystem.upPressed) {
-			vc.y = - __moveSpeed;
+			vc.y = - _moveSpeed;
 		} else if (InputSystem.rightPressed) {
-			vc.x = __moveSpeed;
+			vc.x = _moveSpeed;
 		} else if (InputSystem.downPressed) {
-			vc.y = __moveSpeed;
+			vc.y = _moveSpeed;
 		}
 
 		if (!InputSystem.leftPressed && !InputSystem.rightPressed) {

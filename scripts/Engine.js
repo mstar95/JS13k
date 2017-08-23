@@ -9,8 +9,8 @@ Engine.prototype.init = function () {
 };
 
 Engine.prototype.run = function () {
-	var parent = this; //zrzucam this.hero itd. do zmiennej
-					   //tak żeby było dostępne w mainLoop()
+	var parent = this;	//copy this.hero etc. to variable
+						//to make it accessible into mainLoop()
 
 	let mainLoop = function() {
     	MovementSystem.process([parent.hero]);
