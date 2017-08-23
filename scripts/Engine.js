@@ -5,7 +5,10 @@ function Engine(canvas) {
 Engine.prototype.init = function () {
     RenderSystem.canvas = this.canvas;
     RenderSystem.ctx = this.canvas.getContext("2d");
+    RenderSystem.scale = 10;
     this.hero = HeroFactory.create();
+    this.entities = LevelFactory.createLvl1(this.canvas.width, this.canvas.height)
+	this.entities.push(this.hero)
 };
 
 Engine.prototype.run = function () {
@@ -13,9 +16,11 @@ Engine.prototype.run = function () {
 						//to make it accessible into mainLoop()
 
 	let mainLoop = function() {
-    	MovementSystem.process([parent.hero]);
-        RenderSystem.render([parent.hero]);
-		InputSystem.control([parent.hero]);
+
+        InputSystem.control([parent.hero]);
+        CollisionSystem.process(parent.entities);
+    	MovementSystem.process(parent.entities);
+        RenderSystem.render(parent.entities);
 
 		requestAnimationFrame(mainLoop);
 	};

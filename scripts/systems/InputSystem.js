@@ -45,7 +45,7 @@ InputSystem = new function () {
 
 	let processEntity = function (entity) {
 		vc = entity.components.velocity;
-		console.log(vc.x)
+
 		//może lepiej if zamiast else if, póki co zostawiam tak
 		if (InputSystem.leftPressed) {
 			vc.x = - _moveSpeed;

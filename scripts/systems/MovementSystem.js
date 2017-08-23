@@ -8,9 +8,19 @@ MovementSystem = new function () {
         pc = entity.components.position;
         vc = entity.components.velocity;
         ac = entity.components.acceleration;
-        cc = entity.components.collision
-        if (cc.down === true) {
-            ac.y = cc.gravity
+        cc = entity.components.collision;
+
+        if(!pc || !vc || !ac || !cc)
+            return;
+
+        //console.log(cc.down);
+        if (cc.left || cc.right) {
+            vc.x = 0;
+        }
+
+        if (cc.down) {
+            vc.y = 0;
+            ac.y = 0;
         }
         addCoordinates(vc, ac);
         addCoordinates(pc, vc);

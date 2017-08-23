@@ -6,10 +6,10 @@ function AccelerationComponent(x, y){
 AccelerationComponent.prototype.name = "acceleration"
 
 function CollisionComponent(){
-    this.up = true;
+    this.up = false;
     this.down = false;
-    this.left = true;
-    this.right = true;
+    this.left = false;
+    this.right = false;
 }
 
 CollisionComponent.prototype.gravity = 10;
