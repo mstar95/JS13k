@@ -7,7 +7,7 @@ Engine.prototype.init = function () {
     RenderSystem.ctx = this.canvas.getContext("2d");
     RenderSystem.scale = 10;
     this.hero = HeroFactory.create();
-    this.entities = LevelFactory.createLvl1(this.canvas.width, this.canvas.height)
+    this.entities = LevelFactory.createLvl1(this.canvas.width, this.canvas.height);
 	this.entities.push(this.hero)
 };
 

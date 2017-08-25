@@ -5,7 +5,7 @@ function startGame() {
     let engine = new Engine(canvas);
     engine.init();
     engine.run();
-	console.log(engine);
+
 }
 
 

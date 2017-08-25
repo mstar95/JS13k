@@ -13,18 +13,31 @@ MovementSystem = new function () {
         if(!pc || !vc || !ac || !cc)
             return;
 
-        //console.log(cc.down);
-        if (cc.left || cc.right) {
+        if (cc.left && vc.x < 0) {
             vc.x = 0;
+            ac.x = 0;
         }
 
-        if (cc.down) {
+        if (cc.right && vc.x > 0) {
+            vc.x = 0;
+            ac.x = 0;
+        }
+
+        if (cc.down && vc.y > 0) {
+            vc.y = 0;
+            ac.y = 0;
+        }
+
+        if( !cc.down ) {
+            ac.y = 0.05;
+        }
+
+        if (cc.up && vc.y < 0) {
             vc.y = 0;
             ac.y = 0;
         }
         addCoordinates(vc, ac);
         addCoordinates(pc, vc);
-
     };
 
     let addCoordinates = function (v, dv) {

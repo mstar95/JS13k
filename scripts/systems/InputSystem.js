@@ -1,5 +1,5 @@
 InputSystem = new function () {
-	let _moveSpeed = 7;
+	let _moveSpeed = 2;
 	
 	this.leftPressed = false;
 	this.upPressed = false;
@@ -50,20 +50,23 @@ InputSystem = new function () {
 		if (InputSystem.leftPressed) {
 			vc.x = - _moveSpeed;
 		} else if (InputSystem.upPressed) {
-			vc.y = - _moveSpeed;
+			vc.y = - 2;
+			return;
 		} else if (InputSystem.rightPressed) {
 			vc.x = _moveSpeed;
 		} else if (InputSystem.downPressed) {
-			vc.y = _moveSpeed;
+			//vc.y = _moveSpeed;
+			return;
 		}
 
 		if (!InputSystem.leftPressed && !InputSystem.rightPressed) {
             vc.x = 0
         }
 
+        /*
         if (!InputSystem.upPressed && !InputSystem.downPressed) {
             vc.y = 0
-        }
+        }*/
 
 	};
 }
